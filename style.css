@@ -1,3 +1,143 @@
-#heading {
-    color: green;
+.containerWidth {
+  max-width: 100%;
+  padding: 10px 10px;
+}
+.container {
+  padding: 0px 10px;
+  /* border: 1px solid green; */
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 20px;
+}
+
+.nav-items {
+  display: flex;
+}
+
+.nav-items ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+.nav-items ul li {
+  padding: 0 10px;
+}
+.logoCont {
+  display: flex;
+}
+.Logo {
+  width: 12vw;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.rest_cards_container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  /* background-color: #f8f9fa; */
+  margin: 0;
+  /* padding: 20px; */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.rest_container_body {
+  padding: 10px 23px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 300px;
+  height: 400px;
+}
+.rest_container_body:hover {
+    transform: scale(0.9);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);  */
+}
+.LogoImgCont {
+  cursor: pointer;
+}
+
+.LogoImgCont img {
+  width: 18vw;
+  height: 40vh;
+  border-radius: 35px;
+  object-fit: cover;
+}
+.restaurant-description {
+  font-size: 14px;
+  color: #555555;
+  margin: 0 0 15px 0;
+  line-height: 1.5;
+}
+
+.restaurant-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #777777;
+}
+
+.restaurant-details span {
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  color: #ff9f43;
+  font-weight: bold;
+  display: flex;
+}
+.foods {
+  display: flex;
+  color: #000;
+  font-weight: bold;
+}
+
+.location {
+  color: #6c757d;
+}
+.card_content span{
+  display: inline-block; /* Ensure it behaves like a span */
+  max-width: 200px; /* Set the maximum width as needed */
+  overflow: hidden; /* Hide overflowing content */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  text-overflow: ellipsis; /* Add ellipsis (...) for overflowing text */
+  vertical-align: top; /* Aligns text correctly in inline-block */
+}
+
+
+.swiggy-button {
+  background-color: #fc8019; /* Swiggy's signature orange color */
+  color: #fff; /* White text */
+  font-size: 16px; /* Adjust for readability */
+  font-weight: bold; /* Bold text */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 20px; /* Add space inside the button */
+  cursor: pointer; /* Show pointer on hover */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.swiggy-button:hover {
+  background-color: #e97016; /* Slightly darker shade on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.swiggy-button:active {
+  background-color: #d86014; /* Even darker shade for active state */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduce shadow for pressed effect */
+}
+
+.swiggy-button:disabled {
+  background-color: #f5a76e; /* Light orange for disabled state */
+  cursor: not-allowed; /* Indicate it's not clickable */
+  opacity: 0.7; /* Reduce opacity for visual cue */
 }

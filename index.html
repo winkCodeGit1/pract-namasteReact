@@ -2,43 +2,37 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-</head>
+    <script>
+      document.body.style.cursor = "none";
+    </script>
+  </head>
 
-<body>
-
-
+  <body>
     <!-- Basic way to create hello world project using javascript -->
     <div id="root">
-        <!-- html code  -->
-        <h1>Hello World</h1>
-
-
-
+      <!-- html code  -->
+      <h1>Hello World</h1>
     </div>
     <!-- js to build the html code  -->
 
     <script>
-        const heading = document.createElement("h1");
-        heading.innerHTML = "Hello World from Javascript!";
+      const heading = document.createElement("h1");
+      heading.innerHTML = "Hello World from Javascript!";
 
-        const root = document.getElementById('root');
-        root.appendChild(heading);
+      const root = document.getElementById("root");
+      root.appendChild(heading);
     </script>
 
-
     <!-- Now the same way of creating html code using react code  -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script> -->
 
-
-    <script src="./App.js"></script>
-
-</body>
-
+    <!-- <script type="module" src="./App.js"></script> -->
+    <script type="module" src="./src/index.js"></script>
+  </body>
 </html>
