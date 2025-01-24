@@ -54,3 +54,5 @@
 
 //-useState()- used to create state variables in react.
 //-useEffect()- 
+
+//// For accessing the api of swiggy need to install cors extension in google chrome browser to allow the api to get the data

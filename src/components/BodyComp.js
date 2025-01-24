@@ -38,6 +38,68 @@ const BodyComp = () => {
   // if (listofRest.length === 0) {
   //   return <Shimmer />;
   // }
+
+  ///scroll call for the restaurants from swiggy api
+
+  // const handleScroll = () => {
+  //   // Detect when the user scrolls near the bottom of the page
+  //   if (
+  //     window.innerHeight + window.scrollY >=
+  //     document.body.offsetHeight - 50
+  //   ) {
+  //     fetchDataScroll();
+  //   }
+  // };
+
+  // const fetchDataScroll = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       "https://www.swiggy.com/dapi/restaurants/list/update",
+  //       {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify({
+  //           lat: 12.9352403,
+  //           lng: 77.624532,
+  //           nextOffset: "CJhlELQ4KICwhNi0l+2iCzCnEzgC",
+  //           widgetOffset: {
+  //             NewListingView_category_bar_chicletranking_TwoRows: "",
+  //             NewListingView_category_bar_chicletranking_TwoRows_Rendition: "",
+  //             Restaurant_Group_WebView_PB_Theme: "",
+  //             Restaurant_Group_WebView_SEO_PB_Theme: "",
+  //             collectionV5RestaurantListWidget_SimRestoRelevance_food_seo: "24",
+  //             inlineFacetFilter: "",
+  //             restaurantCountWidget: "",
+  //           },
+  //           filters: {},
+  //           seoParams: {
+  //             seoUrl: "https://www.swiggy.com/restaurants",
+  //             pageType: "FOOD_HOMEPAGE",
+  //             apiName: "FoodHomePage",
+  //           },
+  //           page_type: "DESKTOP_WEB_LISTING",
+  //           _csrf: "HJCwaFoTkCE9-qZqcNEhhJI6iHiK8TFE0Dg1e6zQ",
+  //         }),
+  //       }
+  //     );
+
+  //     console.log(response,'-----response')
+
+  //   } catch (error) {
+  //     console.log("error-----", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   // Attach the scroll listener
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   // Cleanup listener on component unmount
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
   return listofRest.length === 0 ? (
     <Shimmer />
   ) : (
