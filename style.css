@@ -57,8 +57,8 @@
   height: 400px;
 }
 .rest_container_body:hover {
-    transform: scale(0.9);
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);  */
+  transform: scale(0.9);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);  */
 }
 .LogoImgCont {
   cursor: pointer;
@@ -103,7 +103,7 @@
 .location {
   color: #6c757d;
 }
-.card_content span{
+.card_content span {
   display: inline-block; /* Ensure it behaves like a span */
   max-width: 200px; /* Set the maximum width as needed */
   overflow: hidden; /* Hide overflowing content */
@@ -111,7 +111,6 @@
   text-overflow: ellipsis; /* Add ellipsis (...) for overflowing text */
   vertical-align: top; /* Aligns text correctly in inline-block */
 }
-
 
 .swiggy-button {
   background-color: #fc8019; /* Swiggy's signature orange color */
@@ -140,4 +139,60 @@
   background-color: #f5a76e; /* Light orange for disabled state */
   cursor: not-allowed; /* Indicate it's not clickable */
   opacity: 0.7; /* Reduce opacity for visual cue */
+}
+
+.shimmer_body {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  -webkit-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 40px auto;
+}
+
+.shimmer_card {
+  margin: 13px;
+  width: 300px;
+  height: 400px;
+  background-color: #f0f0f0;
+  animation-duration: 2.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: #ddd;
+  background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
+  background-size: 1200px 100%;
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1200px 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+.loginBtn{
+  padding: 5px;
+  background-color: grey;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.search_bar{
+  display: flex;
 }

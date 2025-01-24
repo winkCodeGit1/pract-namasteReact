@@ -1,6 +1,8 @@
+import { useState } from "react";
 import LogoImg from "../utils/constant";
 
 const HeaderComp = () => {
+  const [BtnChange, setBtnChange] = useState("Login");
   return (
     <>
       <div className="container">
@@ -15,6 +17,18 @@ const HeaderComp = () => {
               <li>About Us</li>
               <li>Contact Us</li>
               <li>Cart</li>
+              <li>
+                <button
+                  className="loginBtn"
+                  onClick={() => {
+                    BtnChange === "Login"
+                      ? setBtnChange("Logout")
+                      : setBtnChange("Login");
+                  }}
+                >
+                  {BtnChange}
+                </button>
+              </li>
             </ul>
           </div>
         </div>

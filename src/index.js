@@ -5,7 +5,7 @@ import HeaderComp from "./components/HeaderComp";
 import BodyComp from "./components/BodyComp";
 
 const AppComponent = () => {
-  console.log(<BodyComp />);
+  // console.log(<BodyComp />);
   return (
     <>
       <div className="containerWidth ">
