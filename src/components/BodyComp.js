@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 // import resObj from "../utils/mockData";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const BodyComp = () => {
   //This is called array destructuring
@@ -116,7 +117,8 @@ const BodyComp = () => {
               value={searchText}
               onChange={(e) => setsearchText(e.target.value)}
             />
-            <button className="search-button"
+            <button
+              className="search-button"
               onClick={() => {
                 //Filter the restaurant card and update the UI
                 //SearchText
@@ -138,7 +140,7 @@ const BodyComp = () => {
                   (obj) => obj.info.avgRating === 3.9
                 );
 
-                console.log(filterObj,'---onclick');
+                console.log(filterObj, "---onclick");
 
                 // setListofRest(filterObj);
                 setfilteredSearch(filterObj);
@@ -152,7 +154,9 @@ const BodyComp = () => {
           {/* <RestaurantCard restObj={resObj} /> */}
 
           {filteredSearch.map((obj, index) => (
-            <RestaurantCard key={obj.info.id} restObj={obj.info} />
+            <Link to={"/restaurantMenu/" + obj.info.id}>
+              <RestaurantCard key={obj.info.id} restObj={obj.info} />
+            </Link>
           ))}
         </div>
       </div>

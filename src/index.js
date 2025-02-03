@@ -51,6 +51,7 @@ const appRouter = createBrowserRouter([
       },
     ],
   },
+  
 ]);
 
 const ReactDom = ReactDOM.createRoot(document.getElementById("root"));
