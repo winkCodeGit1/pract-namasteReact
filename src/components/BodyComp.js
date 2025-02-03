@@ -107,14 +107,16 @@ const BodyComp = () => {
       <div className="container mt-2">
         <div className="container search_bar">
           {/* <span className="search">Search</span>&nbsp; */}
-          <div>
+          <div className="search-container">
             <input
               type="text"
               name="searchBar"
+              className="search-field"
+              placeholder="Search Here"
               value={searchText}
               onChange={(e) => setsearchText(e.target.value)}
             />
-            <button
+            <button className="search-button"
               onClick={() => {
                 //Filter the restaurant card and update the UI
                 //SearchText
@@ -133,10 +135,13 @@ const BodyComp = () => {
               className="swiggy-button"
               onClick={() => {
                 const filterObj = listofRest.filter(
-                  (obj) => obj.info.avgRating === 4.3
+                  (obj) => obj.info.avgRating === 3.9
                 );
 
-                setListofRest(filterObj);
+                console.log(filterObj,'---onclick');
+
+                // setListofRest(filterObj);
+                setfilteredSearch(filterObj);
               }}
             >
               Top Rated Restaurant

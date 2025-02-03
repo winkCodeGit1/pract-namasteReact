@@ -1,11 +1,12 @@
 import { useState } from "react";
 import LogoImg from "../utils/constant";
+import { Link } from "react-router-dom";
 
 const HeaderComp = () => {
   const [BtnChange, setBtnChange] = useState("Login");
   return (
     <>
-      <div className="container">
+      <div className="container header_top">
         <div className="header">
           <div className="logoCont">
             <img className="Logo" src={LogoImg} />
@@ -13,9 +14,15 @@ const HeaderComp = () => {
 
           <div className="nav-items">
             <ul>
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Contact Us</li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/aboutus">About Us</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact Us</Link>
+              </li>
               <li>Cart</li>
               <li>
                 <button

@@ -56,3 +56,7 @@
 //-useEffect()- 
 
 //// For accessing the api of swiggy need to install cors extension in google chrome browser to allow the api to get the data
+
+////Routing in react for web application
+- Clinet Side Routing 
+- Server Side Routing
