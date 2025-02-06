@@ -46,7 +46,7 @@ const RestaurantsMenu = () => {
   return !restData ? (
     <h1 className="mt-2">Loading.......</h1>
   ) : (
-    <div className="mt-2">
+    <div className="mt-2" style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
       <h1>Restaurants Name: - {name}</h1>
       <div>
         <h2>Menu List</h2>
