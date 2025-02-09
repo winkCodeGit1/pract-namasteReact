@@ -1,5 +1,5 @@
 import UserClass from "./UserClass";
-// import UserFunction from "./UserFunction";
+import UserFunction from "./UserFunction";
 import React from "react";
 
 class AboutUs extends React.Component {
@@ -13,9 +13,9 @@ class AboutUs extends React.Component {
     console.log("Parent ComponentDidMount render");
   }
 
-  // componentWillMount() {
-  //   console.log("componetwillmount when we unmount the parent component");
-  // }
+  componentWillUnmount() {
+    console.log("componentWillUnmount when we unmount the parent component");
+  }
 
   render() {
     console.log("parent REnder method called");
@@ -36,19 +36,20 @@ class AboutUs extends React.Component {
             name={"Suman Saurav Das (Class) First"}
             email={"sumandas1200@gmail.com"}
           />
-          <UserClass
+          {/* <UserClass
             name={"Suman Saurav Das (Class) Second"}
-            email={"sumandas1200@gmail.com"}
-          />
-
-          <UserClass
-            name={"Suman Saurav Das (Class) Second"}
-            email={"sumandas1200@gmail.com"}
-          />
-          {/* <UserFunction
-            name={"Suman Saurav Das (Function)"}
             email={"sumandas1200@gmail.com"}
           /> */}
+
+          {/* <UserClass
+            name={"Suman Saurav Das (Class) Second"}
+            email={"sumandas1200@gmail.com"}
+          /> */}
+
+          <UserFunction
+            name={"Suman Saurav Das (Function)"}
+            email={"sumandas1200@gmail.com"}
+          />
         </div>
       </>
     );

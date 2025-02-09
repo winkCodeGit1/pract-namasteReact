@@ -17,7 +17,11 @@ class UserClass extends React.Component {
     console.log(this.props.name + " constructor Child");
   }
 
-  async componentDidMount() {
+
+  //we can write async in componentDidMount but we can't write async in useeffect
+  async componentDidMount(prevProps, prevState) {
+    console.log();
+
     console.log(
       this.props.name +
         "componentDidMount render menthod after component mount successfull"
@@ -41,7 +45,6 @@ class UserClass extends React.Component {
     );
   }
 
- 
   render() {
     console.log(this.props.name + "render Child render");
 
