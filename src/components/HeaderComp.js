@@ -1,9 +1,10 @@
 import { useState } from "react";
-import LogoImg from "../utils/constant";
+import { LogoImg } from "../utils/constriants";
 import { Link } from "react-router-dom";
 
 const HeaderComp = () => {
   const [BtnChange, setBtnChange] = useState("Login");
+
   return (
     <>
       <div className="container header_top">
@@ -22,6 +23,9 @@ const HeaderComp = () => {
               </li>
               <li>
                 <Link to="/contact">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/grocery">Grocery</Link>
               </li>
               <li>Cart</li>
               <li>

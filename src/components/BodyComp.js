@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const BodyComp = () => {
   //This is called array destructuring
@@ -100,6 +101,23 @@ const BodyComp = () => {
   //     window.removeEventListener("scroll", handleScroll);
   //   };
   // }, []);
+
+  const status = useOnlineStatus();
+  console.log(status, "-----status");
+
+  if (status === false)
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "102px",
+        }}
+      >
+        <h1>Please Check Your Internet connection!</h1>
+      </div>
+    );
 
   return listofRest.length === 0 ? (
     <Shimmer />

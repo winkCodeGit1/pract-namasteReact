@@ -82,3 +82,16 @@
 ///when there is multiple child class called then the render gets expand on two child 
 
 //iff there is a state update then it calls the this.sate to update the value and then again it calls the render method where the reconcilation process hits again.
+
+
+/////to reduce the js file size for better performance and lloading faster we must follow some process to reduce the size of the .js file. there are same processes with different name.
+
+-To break down app into smaller chunks
+
+i.e,
+-chunking 
+-Dynamic Bundling
+-code splitting
+-lazy loading
+-ondemand loading
+-dynamic import

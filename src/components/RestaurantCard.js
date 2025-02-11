@@ -1,7 +1,13 @@
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 const RestaurantCard = (props) => {
   const { restObj } = props;
   // console.log(restObj);
-  const { cloudinaryImageId, name, avgRating, cuisines, areaName, sla } = restObj;
+  const { cloudinaryImageId, name, avgRating, cuisines, areaName, sla } =
+    restObj;
+
+ 
+
   return (
     <>
       <div className="rest_container_body">
@@ -9,7 +15,8 @@ const RestaurantCard = (props) => {
           <img
             alt="rest-img"
             src={
-              `https://media-assets.swiggy.com/swiggy/image/upload/` + cloudinaryImageId
+              `https://media-assets.swiggy.com/swiggy/image/upload/` +
+              cloudinaryImageId
             }
           />
         </div>
