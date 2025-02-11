@@ -7,28 +7,28 @@ const HeaderComp = () => {
 
   return (
     <>
-      <div className="p-4 shadow-lg">
-        <div className="flex justify-between">
+      <div className="container header_top">
+        <div className="header">
           <div className="logoCont">
-            <img className="w-28" src={LogoImg} />
+            <img className="Logo" src={LogoImg} />
           </div>
 
-          <div className="flex items-center">
-            <ul className="flex justify-between">
-              <li className="px-4">
+          <div className="nav-items">
+            <ul>
+              <li>
                 <Link to="/">Home</Link>
               </li>
-              <li className="px-4">
+              <li>
                 <Link to="/aboutus">About Us</Link>
               </li>
-              <li className="px-4">
+              <li>
                 <Link to="/contact">Contact Us</Link>
               </li>
-              <li className="px-4">
+              <li>
                 <Link to="/grocery">Grocery</Link>
               </li>
-              <li className="px-4">Cart</li>
-              <li className="px-4">
+              <li>Cart</li>
+              <li>
                 <button
                   className="loginBtn"
                   onClick={() => {

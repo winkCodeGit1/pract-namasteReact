@@ -123,20 +123,20 @@ const BodyComp = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="mt-2 my-5">
-        <div className="flex">
+      <div className="container mt-2">
+        <div className="container search_bar">
           {/* <span className="search">Search</span>&nbsp; */}
           <div className="search-container">
             <input
               type="text"
               name="searchBar"
-              className="border border-gray-400 focus:border-green-500 px-2 mx-4"
+              className="search-field"
               placeholder="Search Here"
               value={searchText}
               onChange={(e) => setsearchText(e.target.value)}
             />
             <button
-              className="bg-green-500 hover:bg-green-700 text-white font-bold  px-4 rounded"
+              className="search-button"
               onClick={() => {
                 //Filter the restaurant card and update the UI
                 //SearchText
@@ -150,7 +150,7 @@ const BodyComp = () => {
               Search
             </button>
           </div>
-          <div className="bg-red-500 hover:bg-green-700 text-white font-bold  px-4 rounded mx-3">
+          <span className="button_res">
             <button
               className="swiggy-button"
               onClick={() => {
@@ -166,9 +166,9 @@ const BodyComp = () => {
             >
               Top Rated Restaurant
             </button>
-          </div>
+          </span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+        <div className="rest_cards_container">
           {/* <RestaurantCard restObj={resObj} /> */}
 
           {filteredSearch.map((obj, index) => (
