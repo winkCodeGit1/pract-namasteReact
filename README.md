@@ -95,3 +95,9 @@ i.e,
 -lazy loading
 -ondemand loading
 -dynamic import
+
+
+///parcel uses postcss to read tailwind from our code 
+
+///Higher order function - It is a pure function which takes input a component and provides output same component with some extra additional feature without modifying the original code.
+

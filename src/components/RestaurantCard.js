@@ -1,10 +1,10 @@
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const RestaurantCard = (props) => {
+  console.log(props, "-----props");
   const { restObj } = props;
   // console.log(restObj);
-  const { cloudinaryImageId, name, avgRating, cuisines, areaName, sla } =
-    restObj;
+  const { name, avgRating, cuisines, areaName, sla } = restObj;
 
   return (
     <>
@@ -16,7 +16,7 @@ const RestaurantCard = (props) => {
             className="w-full h-full rounded-lg object-cover"
             src={
               `https://media-assets.swiggy.com/swiggy/image/upload/` +
-              cloudinaryImageId
+              restObj?.cloudinaryImageId
             }
           />
         </div>
@@ -30,12 +30,12 @@ const RestaurantCard = (props) => {
             <span className="bg-green-500 text-white px-2 py-1 rounded text-xs">
               {avgRating} ★
             </span>
-            <span>{sla.slaString} Min</span>
+            <span>{sla?.slaString} Min</span>
           </div>
 
           {/* Cuisines */}
           <span className="block text-gray-500 text-sm mt-1">
-            {cuisines.join(", ")}
+            {cuisines?.join(", ")}
           </span>
 
           {/* Location */}
@@ -44,6 +44,20 @@ const RestaurantCard = (props) => {
       </div>
     </>
   );
+};
+
+//This is a higher order function
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    console.log('higher order function');
+    return (
+      <>
+        <label className="px-4 absolute bg-green-700 text-white">Promoted</label>
+        <RestaurantCard {...props} />
+      </>
+    );
+  };
 };
 
 export default RestaurantCard;

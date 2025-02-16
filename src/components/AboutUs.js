@@ -29,9 +29,9 @@ class AboutUs extends React.Component {
             flexDirection: "column-reverse",
           }}
         >
-          <h2>About Us</h2>
+          <h2 className="text-xl text-amber-950 text-bold mb-[23px]">About Us</h2>
         </div>
-        <div className="about_card">
+        <div className="flex flex-row flex-wrap gap-20 items-center justify-center">
           <UserClass
             name={"Suman Saurav Das (Class) First"}
             email={"sumandas1200@gmail.com"}

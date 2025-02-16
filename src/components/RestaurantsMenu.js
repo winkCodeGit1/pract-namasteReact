@@ -1,11 +1,12 @@
 import { useParams } from "react-router";
 import useRestaurants from "../utils/useRestaurants";
+import CategoryList from "./CategoryList";
 
 const RestaurantsMenu = () => {
   // const [restData, setrestData] = useState({});
   const { resId } = useParams();
 
-  console.log(resId, "------restid");
+  // console.log(resId, "------restid");
 
   const restData = useRestaurants(resId);
 
@@ -41,26 +42,39 @@ const RestaurantsMenu = () => {
   const { name } = restData[2]?.card?.card?.info || "unknown restaturants";
 
   //   console.log(restData[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards,'-----red');
-  console.log(restData[4]?.groupedCard?.cardGroupMap?.Regular, "------red");
+  console.log(
+    restData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards,
+    "------red"
+  );
+
+  const Categories =
+    restData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+      (c) =>
+        c?.["card"]?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
+  console.log(Categories, "------categories");
 
   return !restData ? (
     <h1 className="mt-2">Loading.......</h1>
   ) : (
-    <div
-      className="mt-2"
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <h1>Restaurants Name: - {name}</h1>
-      <div>
-        <h2>Menu List</h2>
+    <div className="flex flex-col items-center mt-10 min-w-full">
+      <h1 className="text-xl text-bold font-semibold from-stone-100">{name}</h1>
+      <div className="mt-2 w-[50%] bg-gray-50">
         <div>
-          <ul>
-            {restData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards?.map(
+          {Categories?.map((category) => (
+            <CategoryList
+              key={category?.card?.card?.categoryId}
+              category_list={category?.card?.card}
+            />
+          ))}
+
+          {/* {restData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards?.map(
               (dish) => (
                 <li>{dish?.card?.info?.name}</li>
               )
-            )}
-          </ul>
+            )} */}
         </div>
       </div>
     </div>

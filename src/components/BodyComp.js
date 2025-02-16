@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // import resObj from "../utils/mockData";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -105,15 +105,12 @@ const BodyComp = () => {
   const status = useOnlineStatus();
   console.log(status, "-----status");
 
+  const PromotedCard = withPromotedLabel(RestaurantCard);
+
   if (status === false)
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginTop: "102px",
-        }}
+      <div className="flex flex-col mt-[120px] items-center"
+        
       >
         <h1>Please Check Your Internet connection!</h1>
       </div>
@@ -173,7 +170,11 @@ const BodyComp = () => {
 
           {filteredSearch.map((obj, index) => (
             <Link to={"/restaurantMenu/" + obj.info.id}>
-              <RestaurantCard key={obj.info.id} restObj={obj.info} />
+              {obj.info.avgRating === 4.8 ? (
+                <PromotedCard key={obj.info.id} restObj={obj.info} />
+              ) : (
+                <RestaurantCard key={obj.info.id} restObj={obj.info} />
+              )}
             </Link>
           ))}
         </div>

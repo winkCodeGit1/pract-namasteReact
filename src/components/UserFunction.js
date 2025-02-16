@@ -29,7 +29,7 @@ const UserFunction = ({ name }) => {
 
   return (
     <>
-      <div className="card">
+      <div className="flex flex-col items-center text-pretty border-spacing-3 border border-gray-300 shadow-lg rounded-lg p-4 bg-white hover:shadow-xl transition-all">
         <h1>Count: - {count}</h1>
         <button onClick={() => setCount(count + 1)}>Click Me</button>
         <p>Name:- {name}</p>
