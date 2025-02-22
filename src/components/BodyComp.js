@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 // import resObj from "../utils/mockData";
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext.js";
 
 const BodyComp = () => {
   //This is called array destructuring
@@ -109,19 +110,18 @@ const BodyComp = () => {
 
   if (status === false)
     return (
-      <div className="flex flex-col mt-[120px] items-center"
-        
-      >
+      <div className="flex flex-col mt-[120px] items-center">
         <h1>Please Check Your Internet connection!</h1>
       </div>
     );
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listofRest.length === 0 ? (
     <Shimmer />
   ) : (
     <>
-      <div className="mt-2 my-5">
-        <div className="flex">
+      <div className="mt-6 my-5">
+        <div className="flex mb-4">
           {/* <span className="search">Search</span>&nbsp; */}
           <div className="search-container">
             <input
@@ -163,6 +163,17 @@ const BodyComp = () => {
             >
               Top Rated Restaurant
             </button>
+          </div>
+          <div>
+            <span>
+              Change UserName:
+              <input
+                className="border border-gray-400 focus:border-green-500 px-2 mx-4"
+                placeholder="Search Username"
+                value={loggedInUser}
+                onChange={(e) => setUserName(e.target.value)}
+              />
+            </span>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">

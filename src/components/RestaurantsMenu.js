@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import useRestaurants from "../utils/useRestaurants";
 import CategoryList from "./CategoryList";
+import { useState } from "react";
 
 const RestaurantsMenu = () => {
   // const [restData, setrestData] = useState({});
@@ -11,6 +12,7 @@ const RestaurantsMenu = () => {
   const restData = useRestaurants(resId);
 
   console.log(restData, "-----restData");
+  const [showIndexExpand, setshowIndexExpand] = useState(null);
 
   // useEffect(() => {
   //   fetchData();
@@ -60,13 +62,20 @@ const RestaurantsMenu = () => {
     <h1 className="mt-2">Loading.......</h1>
   ) : (
     <div className="flex flex-col items-center mt-10 min-w-full">
-      <h1 className="text-xl text-bold font-semibold from-stone-100">{name}</h1>
+      <h1 className="text-2xl font-bold tracking-tight leading-tight text-gray-800">
+        {name}
+      </h1>
       <div className="mt-2 w-[50%] bg-gray-50">
         <div>
-          {Categories?.map((category) => (
+          {Categories?.map((category, index) => (
             <CategoryList
               key={category?.card?.card?.categoryId}
               category_list={category?.card?.card}
+              // expandTitle={index === 0 && true}
+              // expandTitle={true}
+              // expandTitle={false}
+              expandTitle={index === showIndexExpand && true}
+              setshowIndexExpand={() => setshowIndexExpand(index === showIndexExpand ? null : index)}
             />
           ))}
 

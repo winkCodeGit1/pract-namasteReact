@@ -17,15 +17,20 @@ const ItemList = ({ item_list }) => {
         </div>
 
         {/* Food Image */}
-        <img
-          src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/" +
-            item_list?.imageId
-          }
-          //   src={item_list?.imageId}
-          alt={item_list?.category}
-          className="w-24 h-24 rounded-lg object-cover ml-4"
-        />
+        <div className="relative">
+          <img
+            src={
+              "https://media-assets.swiggy.com/swiggy/image/upload/" +
+              item_list?.imageId
+            }
+            //   src={item_list?.imageId}
+            alt={item_list?.category}
+            className="w-24 h-24 rounded-lg object-cover ml-4"
+          />
+          <button className="px-4 py-1 absolute top-[-12px] left-0 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            Add +
+          </button>
+        </div>
       </li>
     </>
   );

@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { LogoImg } from "../utils/constriants";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext"
 
 const HeaderComp = () => {
   const [BtnChange, setBtnChange] = useState("Login");
+
+  const { loggedInUser } = useContext(UserContext);
 
   return (
     <>
@@ -29,6 +32,7 @@ const HeaderComp = () => {
               </li>
               <li className="px-4">Cart</li>
               <li className="px-4">
+                <p className="font-bold text-xl">{loggedInUser}</p>
                 <button
                   className="loginBtn"
                   onClick={() => {

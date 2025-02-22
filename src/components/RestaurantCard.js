@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const RestaurantCard = (props) => {
@@ -5,6 +7,8 @@ const RestaurantCard = (props) => {
   const { restObj } = props;
   // console.log(restObj);
   const { name, avgRating, cuisines, areaName, sla } = restObj;
+
+  const { loggedInUser } = useContext(UserContext);
 
   return (
     <>
@@ -22,7 +26,7 @@ const RestaurantCard = (props) => {
         </div>
 
         {/* Content */}
-        <div className="flex-1">
+        <div className="flex-1 overflow-auto">
           <h2 className="text-xl font-semibold text-gray-800 mb-1">{name}</h2>
 
           {/* Restaurant Details */}
@@ -40,6 +44,9 @@ const RestaurantCard = (props) => {
 
           {/* Location */}
           <span className="block text-gray-400 text-xs mt-1">{areaName}</span>
+          <span className="block text-gray-400 text-xs mt-1">
+            By:- {loggedInUser}
+          </span>
         </div>
       </div>
     </>
@@ -50,10 +57,12 @@ const RestaurantCard = (props) => {
 
 export const withPromotedLabel = (RestaurantCard) => {
   return (props) => {
-    console.log('higher order function');
+    console.log("higher order function");
     return (
       <>
-        <label className="px-4 absolute bg-green-700 text-white">Promoted</label>
+        <label className="px-4 absolute bg-green-700 text-white">
+          Promoted
+        </label>
         <RestaurantCard {...props} />
       </>
     );

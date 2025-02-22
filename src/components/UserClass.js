@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
 
 class UserClass extends React.Component {
   constructor(props) {
@@ -16,7 +17,6 @@ class UserClass extends React.Component {
 
     console.log(this.props.name + " constructor Child");
   }
-
 
   //we can write async in componentDidMount but we can't write async in useeffect
   async componentDidMount(prevProps, prevState) {
@@ -70,6 +70,12 @@ class UserClass extends React.Component {
           <h3>Github name :{this.state.userIfo.name}</h3>
           <h3>Location name :{this.state.userIfo.Location}</h3>
           <h3>company name :{this.state.userIfo.company}</h3>
+          <h3>
+            LoggedIn User:
+            <UserContext.Consumer>
+              {({ loggedInUser }) => <h3 className="font-bold text-xl">{loggedInUser}</h3>}
+            </UserContext.Consumer>
+          </h3>
         </div>
       </>
     );

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 
 import HeaderComp from "./components/HeaderComp";
@@ -13,21 +13,37 @@ import {
 // import AboutUs from "./components/AboutUs";
 import Error from "./components/Error";
 import ContactUs from "./components/ContactUs";
+import UserContext from "./utils/UserContext";
 import RestaurantsMenu from "./components/RestaurantsMenu";
-
 
 ///Lazy Loading Done
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AboutUs = lazy(() => import("./components/AboutUs"));
+
 const AppComponent = () => {
   // console.log(<BodyComp />);
+
+  const [userName, setUserName] = useState("");
+  ///authentication
+  useEffect(() => {
+    const data = {
+      name: "Bemax_3838",
+    };
+
+    setUserName(data?.name);
+  }, []);
+
   return (
     <>
-      <div className="containerWidth " style={{ padding: "0px" }}>
-        <HeaderComp />
-        <Outlet />
-      </div>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="containerWidth " style={{ padding: "0px" }}>
+          <UserContext.Provider value={{ loggedInUser: "Berserker" }}>
+            <HeaderComp />
+          </UserContext.Provider>
+          <Outlet />
+        </div>
+      </UserContext.Provider>
     </>
   );
 };
