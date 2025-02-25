@@ -1,6 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {addItem} from "../utils/cartSlice"
 
 const ItemList = ({ item_list }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = (item) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <>
       <li className="relative flex items-center bg-white p-4 rounded-lg shadow-md">
@@ -27,7 +35,10 @@ const ItemList = ({ item_list }) => {
             alt={item_list?.category}
             className="w-24 h-24 rounded-lg object-cover ml-4"
           />
-          <button className="px-4 py-1 absolute top-[-12px] left-0 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+          <button
+            className="px-4 py-1 absolute top-[-12px] left-0 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            onClick={() => handleClick(item_list)}
+          >
             Add +
           </button>
         </div>

@@ -100,4 +100,16 @@ i.e,
 ///parcel uses postcss to read tailwind from our code 
 
 ///Higher order function - It is a pure function which takes input a component and provides output same component with some extra additional feature without modifying the original code.
+//Context api
+
+
+////Redux toolkit
+-All the steps to write how to use and where to use Redux in our application
+//Install libraries - Redux toolkit  - @reduxjs/toolkit and react-redux
+//Build our own store 
+//connect our store to our app 
+//Slice create (cart slice)
+//dispatch action 
+//Reducer function
+//read th e data using selector
 

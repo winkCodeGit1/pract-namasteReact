@@ -3,7 +3,7 @@ import UserContext from "../utils/UserContext";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const RestaurantCard = (props) => {
-  console.log(props, "-----props");
+  // console.log(props, "-----props");
   const { restObj } = props;
   // console.log(restObj);
   const { name, avgRating, cuisines, areaName, sla } = restObj;
