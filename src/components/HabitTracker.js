@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addHabit } from "../utils/habitSlice";
+import { addHabit, clearHabit } from "../utils/habitSlice";
 import HabitsCard from "./habitsCard";
 
 const HabitTracker = () => {
@@ -25,10 +25,14 @@ const HabitTracker = () => {
     dispatch(addHabit(json));
   };
 
+  const handleClear = () => {
+    dispatch(clearHabit());
+  };
+
   console.log(habitSelector, "------habitSelector");
   return (
     <>
-      <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center">
+      <h1 className="text-2xl font-bold text-gray-800 mb-4 mt-7 text-center">
         Habit Tracker
       </h1>
       <div className="flex justify-center items-start gap-8 px-6">
@@ -65,14 +69,21 @@ const HabitTracker = () => {
           </div>
         </form>
         <div className="w-1/3 p-6 border rounded-lg shadow-lg bg-white">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">
-            Your Habits
-          </h2>
-
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+              Your Habits
+            </h2>
+            <button
+              className="px-3 py-1 text-sm font-medium bg-red-500 text-white rounded-lg hover:bg-red-600"
+              onClick={handleClear}
+            >
+              Clear Habit
+            </button>
+          </div>
           <p>Habits: - {habitSelector.length}</p>
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+      <div className="flex flex-col justify-center items-center m-5 min-h-screen h-4 overflow-y-auto p-4 border border-gray-300 scrollbar-hide" >
         {habitSelector.map((habit) => (
           <HabitsCard key={habit.id} habit={habit} />
         ))}

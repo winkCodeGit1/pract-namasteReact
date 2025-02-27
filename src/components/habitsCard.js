@@ -3,7 +3,7 @@ import React from "react";
 const HabitsCard = ({ habit }) => {
   return (
     <>
-      <div className="mt-6 w-1/2 grid grid-cols-1 sm:grid-cols-1 ">
+      <div className="mt-6 w-1/2 grid grid-cols-1 sm:grid-cols-1 mt-5">
         <div className="p-5 bg-white rounded-xl shadow-md border border-gray-200 relative">
           <h3 className="text-lg font-semibold text-gray-800">{habit.name}</h3>
           <p className="text-sm text-gray-600">Frequency: {habit.frequency}</p>
