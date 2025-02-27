@@ -54,13 +54,15 @@ const HeaderComp = () => {
               <li className="px-4">
                 <Link to="/grocery">Grocery</Link>
               </li>
+              <li className="px-4">
+                <Link to="/HabitTracker">Habit Tracker</Link>
+              </li>
               <li className="px-4 font-bold text-xl">
                 <Link to="/cart">
                   <CartIcon itemCount={cartSelector.length} /> Cart
                 </Link>
               </li>
               <li className="px-4">
-                <p className="font-bold text-xl">{loggedInUser}</p>
                 <button
                   className="loginBtn"
                   onClick={() => {
@@ -71,6 +73,7 @@ const HeaderComp = () => {
                 >
                   {BtnChange}
                 </button>
+                <p className="font-bold text-xl">{loggedInUser}</p>
               </li>
             </ul>
           </div>

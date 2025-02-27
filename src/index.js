@@ -18,11 +18,14 @@ import RestaurantsMenu from "./components/RestaurantsMenu";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import HabitTracker from "./components/HabitTracker";
 
 ///Lazy Loading Done
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AboutUs = lazy(() => import("./components/AboutUs"));
+
+const HabitTracker = lazy(() => import("./components/HabitTracker"));
 
 const AppComponent = () => {
   // console.log(<BodyComp />);
@@ -90,6 +93,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurantMenu/:resId",
         element: <RestaurantsMenu />,
+      },
+      {
+        path: "/HabitTracker",
+        element: (
+          <Suspense fallback={<h1 className="mt-5 m-auto">Loading......</h1>}>
+            <HabitTracker />
+          </Suspense>
+        ),
       },
       {
         path: "/cart",

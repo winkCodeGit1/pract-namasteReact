@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./cartSlice";
+import habitReducer from "./habitSlice";
 
 /// redux dev tools chrome extension
 const appStore = configureStore({
@@ -9,6 +10,7 @@ const appStore = configureStore({
   reducer: {
     //for each slice there is individual reducer
     cart: cartReducer,
+    habit: habitReducer,
   },
 });
 
