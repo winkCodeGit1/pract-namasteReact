@@ -19,6 +19,8 @@ const HabitTracker = () => {
       id: new Date().getTime(),
       habitName: habitName,
       frequency: frequency,
+      completed: false,
+      completedDate: new Date().toLocaleString(),
     };
 
     console.log(json, "-----json");
@@ -54,6 +56,7 @@ const HabitTracker = () => {
                 className="w-full p-2 border border-gray-300 rounded-lg"
                 value={frequency}
                 onChange={(e) => setFrequency(e.target.value)}
+                l
               >
                 <option value="daily">Daily</option>
                 <option value="weekly">Weekly</option>
@@ -83,7 +86,7 @@ const HabitTracker = () => {
           <p>Habits: - {habitSelector.length}</p>
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center m-5 min-h-screen h-4 overflow-y-auto p-4 border border-gray-300 scrollbar-hide" >
+      <div className="flex flex-col justify-center items-center m-5 min-h-screen h-4 overflow-y-auto p-4 border border-gray-300 scrollbar-hide">
         {habitSelector.map((habit) => (
           <HabitsCard key={habit.id} habit={habit} />
         ))}
