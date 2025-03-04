@@ -1,7 +1,9 @@
 # suman's learning
 
-# Parcel - package
+node v- 20.17.0
+npm v- 10.8.2
 
+# Parcel - package
 - Zero Config
 - Dev Build
 - Local Server
@@ -23,7 +25,6 @@
 //Namaste Food
 
 /\*\*
-
 - Header
 - - Logo
 - - Nav Items
