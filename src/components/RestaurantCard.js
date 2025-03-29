@@ -53,7 +53,7 @@ const RestaurantCard = (props) => {
   );
 };
 
-//This is a higher order function
+//This is a higher order component - This is a component which takes another component as an argument and returns a new component with additional functionality,props,logic and behaviour
 
 export const withPromotedLabel = (RestaurantCard) => {
   return (props) => {
